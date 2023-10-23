@@ -8,6 +8,8 @@ function startGame() {
 }
 
 function crearTablero() {
+
+
     let tabla = document.querySelector("#tablero");
     for (let i = 0; i < 3; i++) {
         let fila = document.createElement("tr");
@@ -32,9 +34,9 @@ function pintar() {
             console.log("Ha ganado " + currentPlayer);
             alert("Ha ganado el jugador " + currentPlayer);
             let tabla = document.querySelector("#tablero");
-            tabla.innerHTML= "";
-          
-            
+            tabla.innerHTML = "";
+            l
+
         } else {
             if (currentPlayer === JugadorOne) {
                 currentPlayer = JugadorTwo;
@@ -63,45 +65,74 @@ function arrayTablero() {
 
     }
     console.log(board);
-   return board;
-    
+    return board;
+
 }
-function gameOver(board,player){
+function gameOver(board, player) {
     for (let i = 0; i < 3; i++) {
         if (
             board[i][0] === player &&
             board[i][1] === player &&
             board[i][2] === player
         ) {
-            return true; 
+            return true;
         }
     }
 
-    
     for (let j = 0; j < 3; j++) {
         if (
             board[0][j] === player &&
             board[1][j] === player &&
             board[2][j] === player
         ) {
-            return true; 
+            return true;
         }
     }
 
-   
     if (
         (board[0][0] === player &&
-         board[1][1] === player &&
-         board[2][2] === player) ||
+            board[1][1] === player &&
+            board[2][2] === player) ||
         (board[0][2] === player &&
-         board[1][1] === player &&
-         board[2][0] === player)
+            board[1][1] === player &&
+            board[2][0] === player)
     ) {
-        return true; 
+        return true;
     }
 
-    return false; 
+    
+    let casillas = 0;
+    for (let i = 0; i < board.length; i++) {
+
+        for (let j = 0; j < board[i].length; j++) {
+            if (board[i][j] != "-") {
+                casillas++;
+                if (casillas >= 9) {
+                    resetBoard();
+                   
+
+                }
+
+
+            }
+
+
+
+        }
+
+
+    }
+
+    return false;
 }
+
+function resetBoard() {
+    alert("HA HABIDO UN EMPATE SE REINICIARA AUTOMATICAMENTE ");
+    let tabla = document.querySelector("#tablero");
+    tabla.innerHTML = "";
+    crearTablero();
+}
+
 
 
 
