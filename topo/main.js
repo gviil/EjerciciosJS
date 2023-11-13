@@ -28,13 +28,13 @@ function startGame() {
   point = 0;
   marcador.textContent = point;
   timeUp = false;
-  timeId = setTimeout(endGame, 15000); // 15 segundos
+  timeId = setTimeout(endGame, 15000);
 
   intervalId = setInterval(moveHasn, 1000);
 }
 function moveHasn() {
   if (!timeUp) {
-    holes.forEach((hole) => hole.classList.remove("up"));
+    ocultar();
 
     holes[numRandom()].classList.add("up");
   }
@@ -54,6 +54,9 @@ function whack() {
 
 function endGame() {
   timeUp = true;
-  holes.forEach((hole) => hole.classList.remove("up"));
+  ocultar();
   alert("Juego terminado. Puntuación: " + point);
+}
+function ocultar() {
+  holes.forEach((hole) => hole.classList.remove("up"));
 }

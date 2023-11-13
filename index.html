@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+     
+    const init = async ()=>{
+        
+        for (let index = 1; index < 150; index++) {
+            let url = `https://pokeapi.co/api/v2/pokemon-form/${index}/`;
+            const fetchPokemon= await fetch (url);
+            const jsonPokemon = await fetchPokemon.json();
+            console.log(jsonPokemon);
+            pintarPokemon(jsonPokemon);
+           
+            
+        }
+        
+
+
+    }
+
+    const pintarPokemon = (pokemonJson)=>{
+        console.log(pokemonJson);
+
+        let img = document.createElement("img");
+        img.src =pokemonJson.sprites.front_default;
+
+        let p = document.createElement("p");
+         p.textContent = pokemonJson.name;
+         document.body.appendChild(img);
+        document.body.appendChild(p)
+
+
+    }
+   
+
+    init();
+
+
+</script>

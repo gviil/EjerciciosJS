@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kanit:wght@200&family=Roboto:wght@100&display=swap');
+
+* {
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px auto;
+}
+
+body {
+    background-color: red;
+}
+
+.title {
+    width: 90%;
+}
+
+.title img {
+    width: 100%;
+}
+
+
+.pokemon-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.button-79 {
+    backface-visibility: hidden;
+    background: #332cf2;
+    border: 0;
+    border-radius: .375rem;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Circular, Helvetica, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.3;
+    padding: 1rem 1.25rem;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transform: translateZ(0) scale(1);
+    transition: transform .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+
+
+.button-79:disabled {
+    color: #787878;
+    cursor: auto;
+}
+
+.button-79:not(:disabled):hover {
+    transform: scale(1.05);
+}
+
+.button-79:not(:disabled):hover:active {
+    transform: scale(1.05) translateY(.125rem);
+}
+
+.button-79:focus {
+    outline: 0 solid transparent;
+}
+
+.button-79:focus:before {
+    border-width: .125rem;
+    content: "";
+    left: calc(-1*.375rem);
+    pointer-events: none;
+    position: absolute;
+    top: calc(-1*.375rem);
+    transition: border-radius;
+    user-select: none;
+}
+
+.button-79:focus:not(:focus-visible) {
+    outline: 0 solid transparent;
+}
+
+.button-79:not(:disabled):active {
+    transform: translateY(.125rem);
+}
+
+.flip-card-front img {
+    width: 150px;
+
+}
+
+.btn-Filter {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    margin: 30px;
+
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #ffffff;
+    color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.backFire {
+    background-image: url(fondoFuego.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backGrass {
+    background-image: url(fondoPlanta.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backWater {
+    background-image: url(fondoAgua.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backRock {
+    background-image: url(fondoPiedra.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backPre {
+    background-image: url(fondoPre.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.filter-pokemon {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
